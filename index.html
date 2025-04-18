@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Community Maps Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background: #f5f5f5;
+        }
+        select, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Select a Community Map</h1>
+
+    <label for="community">Community:</label>
+    <select id="community">
+        <option value="">--Select Community--</option>
+        <option value="Cameron">Cameron</option>
+        <option value="Mandeville_Slidell">Mandeville_Slidell</option>
+        <option value="MorganCity_Stephensville">MorganCity_Stephensville</option>
+        <!-- add more as needed -->
+    </select>
+
+    <label for="service">Essential Service:</label>
+    <select id="service">
+        <option value="">--Select Service--</option>
+        <option value="ems">EMS</option>
+        <option value="fire">Fire</option>
+        <option value="daycare">Daycare</option>
+        <option value="school">School</option>
+        <option value="high_school">High School</option>
+        <option value="dialysis">Dialysis</option>
+        <option value="hospital">Hospital</option>
+        <option value="trauma">Trauma</option>
+        <option value="grocery">Grocery</option>
+        <!-- add more as needed -->
+    </select>
+
+    <button onclick="openMap()">View Map</button>
+
+    <script>
+        function openMap() {
+            var community = document.getElementById("community").value;
+            var service = document.getElementById("service").value;
+
+            if (community && service) {
+                var url = "maps/" + community + "_" + service + "_new.html";
+                window.open(url, "_blank");
+            } else {
+                alert("Please select both a community and a service.");
+            }
+        }
+    </script>
+
+</body>
+</html>
