@@ -51,7 +51,7 @@
 
             if (community && service) {
                 var url = "maps/" + community + "_" + service + "_new.html";
-                window.location.href = url;
+                window.open(url, "_blank")
             } else {
                 alert("Please select both a community and a service.");
             }
