@@ -4,8 +4,29 @@
     <meta charset="UTF-8">
     <title>Community Services Accessibility Maps</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        img { max-width: 100%; height: auto; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            max-width: 900px;
+            line-height: 1.6;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+        }
+        select, button {
+            margin: 10px 5px;
+            padding: 8px;
+            font-size: 1em;
+        }
+        label {
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .project-description {
+            word-wrap: break-word;
+            white-space: normal;
+        }
     </style>
 </head>
 <body>
@@ -14,6 +35,17 @@
     <h2>Reference Map</h2>
     <p>This reference map shows the locations of all communities included in this project.</p>
     <img src="figures/community_boundaries.png" alt="Reference Map of Communities">
+
+    <h2>Relevant Project</h2>
+    <p class="project-description">
+        This project is an extension of 
+        <em>"Bridging Knowledge to Action: Using Data to Develop Equitable Outcomes or Solutions to Climate Hazards and Other Disasters"</em>, 
+        which was a partnership between Purdue University and 
+        <a href="https://thewaterinstitute.org/" target="_blank">The Water Institute</a>. 
+        The funding for this project came from the Gulf Research Program (GRP) as part of the National Academies.
+        A decision support system was created through this project and can be accessed via this 
+        <a href="https://thewaterinstitute.org/projects/incorporating-equity-and-social-vulnerability-into-the-design-of-flood-risk-mitigation-strategies" target="_blank">project link</a>.
+    </p>
 
     <h2>Select a Community and Service</h2>
     <p>Use the dropdown menu below to navigate to the interactive accessibility maps.</p>
@@ -24,7 +56,7 @@
         <option value="Cameron">Cameron</option>
         <option value="Mandeville_Slidell">Mandeville_Slidell</option>
         <option value="MorganCity_Stephensville">MorganCity_Stephensville</option>
-        <!-- add more as needed -->
+        <!-- Add more as needed -->
     </select>
 
     <label for="service">Essential Service:</label>
@@ -39,7 +71,7 @@
         <option value="hospital">Hospital</option>
         <option value="trauma">Trauma</option>
         <option value="grocery">Grocery</option>
-        <!-- add more as needed -->
+        <!-- Add more as needed -->
     </select>
 
     <button onclick="openMap()">View Map</button>
@@ -51,12 +83,11 @@
 
             if (community && service) {
                 var url = "maps/" + community + "_" + service + "_new.html";
-                window.open(url, "_blank")
+                window.open(url, "_blank");
             } else {
                 alert("Please select both a community and a service.");
             }
         }
     </script>
-
 </body>
 </html>
